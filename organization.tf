@@ -38,7 +38,7 @@ locals {
 }
 
 module "organization" {
-  source = "git@github.com:my-org/fast-modules.git//organization
+  source = "git@github.com:mbychkowski/gcp-fast-modules.git//organization"
   organization_id = "organizations/${var.organization.id}"
   # IAM additive bindings, granted via the restricted Organization Admin custom
   # role assigned in stage 00; they need to be additive to avoid conflicts
