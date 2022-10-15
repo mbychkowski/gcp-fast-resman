@@ -37,7 +37,7 @@ locals {
 # billing account in a different org
 
 module "billing-organization-ext" {
-  source          = "../../../modules/organization"
+  source = "git@github.com:my-org/fast-modules.git//organization
   count           = local.billing_org_ext ? 1 : 0
   organization_id = "organizations/${var.billing_account.organization_id}"
   iam_additive = {

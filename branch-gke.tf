@@ -17,7 +17,7 @@
 # tfdoc:file:description GKE multitenant stage resources.
 
 module "branch-gke-folder" {
-  source = "../../../modules/folder"
+  source = "git@github.com:my-org/fast-modules.git//folder
   count  = var.fast_features.gke ? 1 : 0
   parent = "organizations/${var.organization.id}"
   name   = "GKE"
@@ -29,7 +29,7 @@ module "branch-gke-folder" {
 }
 
 module "branch-gke-dev-folder" {
-  source = "../../../modules/folder"
+  source = "git@github.com:my-org/fast-modules.git//folder
   count  = var.fast_features.gke ? 1 : 0
   parent = module.branch-gke-folder.0.id
   name   = "Development"
@@ -49,7 +49,7 @@ module "branch-gke-dev-folder" {
 }
 
 module "branch-gke-prod-folder" {
-  source = "../../../modules/folder"
+  source = "git@github.com:my-org/fast-modules.git//folder
   count  = var.fast_features.gke ? 1 : 0
   parent = module.branch-gke-folder.0.id
   name   = "Production"
@@ -69,7 +69,7 @@ module "branch-gke-prod-folder" {
 }
 
 module "branch-gke-dev-sa" {
-  source      = "../../../modules/iam-service-account"
+  source = "git@github.com:my-org/fast-modules.git//iam-service-account
   count       = var.fast_features.gke ? 1 : 0
   project_id  = var.automation.project_id
   name        = "dev-resman-gke-0"
@@ -89,7 +89,7 @@ module "branch-gke-dev-sa" {
 }
 
 module "branch-gke-prod-sa" {
-  source      = "../../../modules/iam-service-account"
+  source = "git@github.com:my-org/fast-modules.git//iam-service-account
   count       = var.fast_features.gke ? 1 : 0
   project_id  = var.automation.project_id
   name        = "prod-resman-gke-0"
@@ -109,7 +109,7 @@ module "branch-gke-prod-sa" {
 }
 
 module "branch-gke-dev-gcs" {
-  source     = "../../../modules/gcs"
+  source = "git@github.com:my-org/fast-modules.git//gcs
   count      = var.fast_features.gke ? 1 : 0
   project_id = var.automation.project_id
   name       = "dev-resman-gke-0"
@@ -121,7 +121,7 @@ module "branch-gke-dev-gcs" {
 }
 
 module "branch-gke-prod-gcs" {
-  source     = "../../../modules/gcs"
+  source = "git@github.com:my-org/fast-modules.git//gcs
   count      = var.fast_features.gke ? 1 : 0
   project_id = var.automation.project_id
   name       = "prod-resman-gke-0"

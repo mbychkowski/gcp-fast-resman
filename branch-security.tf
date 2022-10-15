@@ -17,7 +17,7 @@
 # tfdoc:file:description Security stage resources.
 
 module "branch-security-folder" {
-  source = "../../../modules/folder"
+  source = "git@github.com:my-org/fast-modules.git//folder
   parent = "organizations/${var.organization.id}"
   name   = "Security"
   group_iam = {
@@ -49,7 +49,7 @@ module "branch-security-folder" {
 # automation service account and bucket
 
 module "branch-security-sa" {
-  source      = "../../../modules/iam-service-account"
+  source = "git@github.com:my-org/fast-modules.git//iam-service-account
   project_id  = var.automation.project_id
   name        = "prod-resman-sec-0"
   description = "Terraform resman security service account."
@@ -65,7 +65,7 @@ module "branch-security-sa" {
 }
 
 module "branch-security-gcs" {
-  source        = "../../../modules/gcs"
+  source = "git@github.com:my-org/fast-modules.git//gcs
   project_id    = var.automation.project_id
   name          = "prod-resman-sec-0"
   prefix        = var.prefix

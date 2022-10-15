@@ -22,7 +22,7 @@ moved {
 }
 
 module "branch-sandbox-folder" {
-  source = "../../../modules/folder"
+  source = "git@github.com:my-org/fast-modules.git//folder
   count  = var.fast_features.sandbox ? 1 : 0
   parent = "organizations/${var.organization.id}"
   name   = "Sandbox"
@@ -56,7 +56,7 @@ moved {
 }
 
 module "branch-sandbox-gcs" {
-  source        = "../../../modules/gcs"
+  source = "git@github.com:my-org/fast-modules.git//gcs
   count         = var.fast_features.sandbox ? 1 : 0
   project_id    = var.automation.project_id
   name          = "dev-resman-sbox-0"
@@ -75,7 +75,7 @@ moved {
 }
 
 module "branch-sandbox-sa" {
-  source      = "../../../modules/iam-service-account"
+  source = "git@github.com:my-org/fast-modules.git//iam-service-account
   count       = var.fast_features.sandbox ? 1 : 0
   project_id  = var.automation.project_id
   name        = "dev-resman-sbox-0"
